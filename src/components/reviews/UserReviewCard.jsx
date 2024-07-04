@@ -10,6 +10,7 @@ const UserReviewCard = ({ id, idTemplate, content, rating, date, onDelete }) => 
         setUpdate(!update);
     };
 
+    
     const handleClose = () => {
         setUpdate(false);
     };

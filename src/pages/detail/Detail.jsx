@@ -85,7 +85,7 @@ const Detail = () => {
                         </div>
                         <br />
                         <span className="font-bold text-2xl text-bgred text-start mr-8 mt-4 font-inter font-bold text-gray-800 pb-4 transition-colors tracking-wider border-green-900">
-                            {template.price}
+                            {`${"$"}${template.price}`}
                         </span>
                         <br />
                         <br />

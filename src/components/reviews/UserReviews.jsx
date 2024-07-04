@@ -13,7 +13,7 @@ const UserReviews = () => {
 
     useEffect(() => {
         dispatch(getReviewsUser());
-    }, [dispatch]);
+    }, []);
 
     const openDeleteModal = (idReview) => {
         setSelectedReviewId(idReview);
