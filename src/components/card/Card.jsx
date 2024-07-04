@@ -83,7 +83,12 @@ console.log(template);
       <div className="px-6 py-6">
         <div className="font-inter text-l">{template.name}</div>
         <div className="flex justify-between items-center">
-          <p className="text-black text-lg font-bold ml-auto">${template.price}</p>
+          <p className="text-black text-lg font-bold">${template.price}</p>
+          <div className="mt-2">
+          {template.technologies && template.technologies.map(tech => (
+            <span key={tech.id} className="text-[12px] border-2 border-[#06B6D4] text-gray-900 px-2 py-1 rounded p-2 m-2 hover:bg-[#06B6D4] hover:text-white">{tech.name}</span>
+          ))}
+        </div>
         </div>
       </div>
       <div className="px-6 py-6">

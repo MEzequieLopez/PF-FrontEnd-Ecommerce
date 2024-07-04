@@ -63,7 +63,7 @@ const UserReviewCard = ({ id, idTemplate, content, rating, date, onDelete }) => 
                             p: 4,
                         }}
                     >
-                        <UpdateReviewForm review={{ id, content, rating }} />
+                        <UpdateReviewForm review={{ id, content, rating }} handleClose={handleClose} />
                     </Box>
                 </Modal>
             </div>
@@ -73,4 +73,5 @@ const UserReviewCard = ({ id, idTemplate, content, rating, date, onDelete }) => 
 };
 
 export default UserReviewCard;
+
 

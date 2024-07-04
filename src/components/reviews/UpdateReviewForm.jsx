@@ -4,23 +4,22 @@ import { updateReview } from "../../redux/actions/reviewsAction";
 import { Rating } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
-
-const UpdateReviewForm = ({ review }) => {
-    
+const UpdateReviewForm = ({ review, handleClose }) => {
     const [formData, setFormData] = useState({
         rating: review.rating,
         content: review.content
     });
 
     const dispatch = useDispatch();
-    
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
-        
     };
 
     const handleSubmit = (e) => {
@@ -35,7 +34,9 @@ const UpdateReviewForm = ({ review }) => {
             .then(() => {
                 toast.success('Opinión actualizada con éxito');
                 setTimeout(() => {
-                    window.location.reload(); 
+                    handleClose(); // Cerrar el modal después de la actualización
+                    navigate('/profile', { replace: true });
+                    window.location.hash = '#reviews'; // Esto hará que la página se desplace a la sección de reseñas
                 }, 1000);
             })
             .catch((error) => {
@@ -69,7 +70,6 @@ const UpdateReviewForm = ({ review }) => {
                         fullWidth
                         className="mb-2"
                     />
-                    
                 </div>
                 <div className="flex justify-between">
                     <button

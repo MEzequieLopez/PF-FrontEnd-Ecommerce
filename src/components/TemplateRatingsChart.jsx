@@ -54,8 +54,8 @@ const TemplateRatingsChart = () => {
     }
 
     return (
-        <div>
-            <h2>Template Average Ratings</h2>
+        <div className='w-[800px]'>
+            <h2 className='text-[16px] text-gray-700'>Template Average Ratings</h2>
             <Bar data={chartData} />
         </div>
     );
